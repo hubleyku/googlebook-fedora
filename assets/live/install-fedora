@@ -1,0 +1,5 @@
+#!/bin/sh
+if [ "$(id -u)" -eq 0 ]; then
+    exec /usr/bin/python3 -B /opt/lapis-kit/tools/install_fedora.py "$@"
+fi
+exec sudo -n /usr/bin/python3 -B /opt/lapis-kit/tools/install_fedora.py "$@"

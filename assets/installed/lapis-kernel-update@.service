@@ -1,0 +1,9 @@
+[Unit]
+Description=Update Lapis firmware boot images for kernel %I
+After=local-fs.target
+RequiresMountsFor=/var/lib/lapis-fedora /usr/lib/modules /opt/lapis-kit
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/lapis-kit/tools/auto_fedora_update.py --kernel-version %I
+TimeoutStartSec=15min

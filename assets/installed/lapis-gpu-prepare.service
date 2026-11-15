@@ -1,0 +1,15 @@
+[Unit]
+Description=Prepare ASUS Lapis graphics before login and desktop
+Wants=systemd-udev-settle.service
+After=systemd-udev-settle.service systemd-modules-load.service
+Before=display-manager.service getty@tty1.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+TimeoutStartSec=90
+ExecStart=/usr/bin/python3 /usr/local/libexec/lapis-gpu-prepare
+ExecStartPost=-/usr/bin/modprobe snd_sof_pci_intel_ptl
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,33 @@
+# Downloaded dependencies and generated media
+/build/
+/downloads/
+/vendor/
+*.build/
+*.img
+*.iso
+*.rpm
+*.tar.gz
+*.log
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Local credentials, signing keys, and device backups
+.env
+.env.*
+*.pem
+*.key
+*.nmconnection
+/backups/
+/private/
+/.agents/
+/.codex/
+/.aws/
+
+# Editor and operating-system files
+.DS_Store
+*~
+*.swp

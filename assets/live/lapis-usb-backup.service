@@ -1,0 +1,16 @@
+[Unit]
+Description=Mount backup storage on the Lapis installer USB
+Wants=systemd-udev-settle.service
+After=systemd-udev-settle.service lapis-live-labels.service
+Before=multi-user.target
+ConditionPathExists=/etc/lapis/usb.json
+ConditionPathExists=/opt/lapis-kit/tools/mount_installer_usb.py
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 -B /opt/lapis-kit/tools/mount_installer_usb.py
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target

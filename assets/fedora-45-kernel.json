@@ -1,0 +1,29 @@
+{
+  "kernel_version": "7.2.11-300.fc45.x86_64",
+  "signing_key_fingerprint": "4F50A6114CD5C6976A7F1179655A4B02F577861E",
+  "verification": "RPM signatures and payload digests passed; SHA-256 values match cached Fedora 45 release-repository metadata",
+  "packages": [
+    {
+      "file": "kernel-7.2.11-300.fc45.x86_64.rpm",
+      "sha256": "9d68c2879e6901198ccb84c7a2910a6574df9fd0baa95b353a4d417b4447abe7",
+      "repository": "fedora"
+    },
+    {
+      "file": "kernel-core-7.2.11-300.fc45.x86_64.rpm",
+      "sha256": "2d9ea2afa2da4937390f8cc381695db7a1f0b6672d759e75fdde6ca76230aa6a",
+      "repository": "fedora"
+    },
+    {
+      "file": "kernel-modules-7.2.11-300.fc45.x86_64.rpm",
+      "sha256": "905833535f5c8592403c0455438c8bae52deaad4177cb5547f6ec6a01e412e35",
+      "repository": "fedora"
+    },
+    {
+      "file": "kernel-modules-core-7.2.11-300.fc45.x86_64.rpm",
+      "sha256": "1fa16541f23ff1547ffa4fd7b40dbc4460389e3d97c3bf3856296981253360e0",
+      "repository": "fedora"
+    }
+  ],
+  "kernel_sha256": "3de692df9e8d14d8dc3c0d935ec4c04fbe9231d8bdc18aeda1b6f0e20c7a1d1c",
+  "matches_live_iso_kernel": true
+}

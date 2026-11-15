@@ -1,0 +1,14 @@
+[Unit]
+Description=Label files added to the Lapis live overlay
+DefaultDependencies=no
+After=systemd-remount-fs.service
+Before=systemd-modules-load.service systemd-tmpfiles-setup.service livesys.service sysinit.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/restorecon -RF /etc/sudoers.d/90-lapis-live /usr/local/libexec/lapis-gpu-prepare /etc/systemd/system/lapis-gpu-prepare.service /etc/systemd/system/lapis-live-labels.service /etc/systemd/system/gdm.service.d /etc/systemd/system/livesys.service.d /etc/systemd/system-preset/00-lapis-live.preset /etc/modprobe.d/lapis-live.conf /opt
+ExecStart=-/usr/sbin/restorecon -RF /usr/local/bin/install-fedora /etc/lapis /etc/systemd/system/lapis-usb-backup.service
+
+[Install]
+WantedBy=sysinit.target

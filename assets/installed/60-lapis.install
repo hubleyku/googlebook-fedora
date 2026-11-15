@@ -1,0 +1,14 @@
+#!/bin/sh
+# Invoked by Fedora kernel RPMs after 50-depmod.install.
+set -eu
+case "$1" in
+    add)
+        if systemd-detect-virt --chroot >/dev/null 2>&1; then exit 0; fi
+        [ -d /run/systemd/system ] || { echo 'Lapis: systemd is required for automatic boot updates' >&2; exit 1; }
+        unit=$(systemd-escape --template=lapis-kernel-update@.service "$2")
+        systemctl start "$unit"
+        exit 77
+        ;;
+    remove) exit 77 ;;
+    *) exit 0 ;;
+esac
