@@ -175,7 +175,7 @@ def install_kit():
     for folder in ('lapis', 'tools', 'assets', 'docs'):
         shutil.copytree(ROOT / folder, dest / folder,
                         ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
-    for name in ('README.md', 'LICENSE', 'NOTICE.md', 'CONTRIBUTING.md'):
+    for name in ('README.md', 'LICENSE', 'NOTICE.md'):
         shutil.copy2(ROOT / name, dest / name)
     from tools.build_fedora_usb import vendor_payload
     for relative, data in vendor_payload(runtime_sources(ROOT), ROOT).items():

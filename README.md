@@ -49,7 +49,6 @@ works without changing the boot target.
 - [Install Fedora and handle interrupted installs](docs/install.md)
 - [Backups and boot-image recovery](docs/recovery.md)
 - [Project structure, implementation, and tests](docs/development.md)
-- [Contributing and reporting problems](CONTRIBUTING.md)
 - [Publishing source and release artifacts](docs/publishing.md)
 
 ## Supported hardware
@@ -70,6 +69,12 @@ subvolumes `@` and `@home`; other partition positions are preserved.
 The automated flow has file-based and isolated provisioning tests. A full
 installation, USB automount, and first boot still require validation on the
 physical Googlebook. See the test details in the development guide.
+
+## Maintenance and support
+
+This repository is published as-is for others to use and adapt. I do not
+provide support or accept contributions. If you encounter problems or want
+changes, please fork the repository and maintain your own version.
 
 ## Acknowledgments
 

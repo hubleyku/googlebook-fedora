@@ -22,7 +22,7 @@ class RecoveryKitTests(unittest.TestCase):
         for folder in ('lapis', 'tools', 'assets', 'docs'):
             shutil.copytree(ROOT / folder, self.root / folder,
                             ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
-        for name in ('README.md', 'LICENSE', 'NOTICE.md', 'CONTRIBUTING.md'):
+        for name in ('README.md', 'LICENSE', 'NOTICE.md'):
             shutil.copy2(ROOT / name, self.root / name)
         for relative, data in vendor_payload(ROOT / 'build/sources', ROOT).items():
             path = self.root / 'vendor' / relative

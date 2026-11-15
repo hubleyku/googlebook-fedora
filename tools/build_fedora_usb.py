@@ -102,7 +102,7 @@ def kit_payload(vendor, root=None):
             if path.is_file() and not path.is_symlink() and '__pycache__' not in path.parts:
                 require(path.suffix not in ('.pem', '.key', '.img', '.iso', '.bin', '.pyc'), 'Unexpected private/build file in kit')
                 add('lapis-kit/' + str(path.relative_to(root)), path.read_bytes(), path.suffix in ('.py', '.sh'))
-    for name in ('README.md', 'LICENSE', 'NOTICE.md', 'CONTRIBUTING.md'):
+    for name in ('README.md', 'LICENSE', 'NOTICE.md'):
         add('lapis-kit/' + name, (root / name).read_bytes())
     for relative, data in vendor_payload(vendor, root).items():
         add('lapis-kit/vendor/' + relative, data, relative.endswith('.py'))
